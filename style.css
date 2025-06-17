@@ -1,0 +1,195 @@
+/* Reset dasar */
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #f7f0fc;
+  color: #333;
+}
+
+/* Skip to Content - Aksesibilitas WCAG */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  z-index: -999;
+}
+
+.skip-link:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 1rem;
+  padding: 0.5rem;
+  background: #fff;
+  color: #000;
+  z-index: 1000;
+  border: 2px solid #642b73;
+}
+
+/* Header dan Navigasi */
+header {
+  background-color: #642b73;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: white;
+  margin: 0 1rem;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Konten utama */
+main {
+  padding: 2rem;
+  min-height: 70vh;
+}
+
+/* Footer */
+footer {
+  background-color: #642b73;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Formulir */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+input[type="text"],
+input[type="file"],
+input[type="email"],
+input[type="password"],
+textarea {
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+button {
+  padding: 0.5rem;
+  background-color: #642b73;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #7d3cae;
+}
+
+/* Map styling */
+#map {
+  width: 100%;
+  height: 400px;
+  margin-top: 1rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+/* Cerita */
+.stories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.story {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.story img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+#list-cerita .story {
+  background-color: white;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsif */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav {
+    margin-top: 1rem;
+  }
+
+  form {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  main {
+    padding: 1rem;
+  }
+}
+
+::view-transition-old(app),
+::view-transition-new(app) {
+  animation-duration: 400ms;
+  animation-timing-function: ease-in-out;
+  transform-origin: center;
+}
+
+::view-transition-old(app) {
+  animation-name: scale-out;
+}
+
+::view-transition-new(app) {
+  animation-name: scale-in;
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes scale-out {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(1.02);
+  }
+}
+
